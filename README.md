@@ -2,7 +2,7 @@
 
 Ein Labyrinth-Generator mit automatischer Wegfindung in C# und Windows Forms. Er ist eines meiner ersten Programmierprojekte und entstand im November 2021, in der Anfangszeit meiner Programmierlaufbahn – als privates Projekt, weil mich interessiert hat, wie man ein Labyrinth automatisch erzeugen und lösen kann.
 
-Wie schon beim Taschenrechner aus meinem Praktikum gilt auch hier: Der Code zeigt, wo ich damals stand – mit allem, was man als Anfänger eben so macht.
+Der Code zeigt, wo ich damals stand – mit allem, was man als Anfänger eben so macht.
 
 ![Generiertes Labyrinth mit eingezeichnetem Lösungsweg](docs/screenshot-labyrinth.png)
 
