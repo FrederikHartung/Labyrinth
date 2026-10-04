@@ -4,21 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Labyrinth.HelperKlassenX
+namespace Labyrinth
 {
     [System.AttributeUsage(AttributeTargets.Property)]
     /// <summary>
     /// Jede Property, die dieses Attribute hat, bekommt beim setzen dieses Wertes in einen Textfeld diesen Wert als Einheit hinzugefügt
     /// </summary>
-    public class Custom_Trennpunkt : Attribute
+    public class Custom_Einheit : Attribute
     {
-        public Custom_Trennpunkt(int abstand, string trennsymbol)
+        public Custom_Einheit(string einheit)
         {
-            Abstand = abstand;
-            Trennsymbol = trennsymbol;
+            Einheit = einheit;
         }
 
-        public int Abstand { get; set; }
-        public string Trennsymbol { get; set; }
+        public string Einheit { get; set; }
+
     }
 }

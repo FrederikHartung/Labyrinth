@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HelperKlassenX
+namespace Labyrinth
 {
     public static class ObjectConverter
     {

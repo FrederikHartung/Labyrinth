@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HelperKlassenX
+namespace Labyrinth
 {
     public static class ExportImportHelper
     {

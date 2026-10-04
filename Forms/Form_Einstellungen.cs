@@ -8,8 +8,6 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using HelperKlassenX;
-using Labyrinth.HelperKlassenX;
 
 namespace Labyrinth
 {

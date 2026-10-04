@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 
-namespace HelperKlassenX
+namespace Labyrinth
 {
     public static class StringHelper
     {

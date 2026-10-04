@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Labyrinth.HelperKlassenX
+namespace Labyrinth
 {
     [System.AttributeUsage(AttributeTargets.Property)]
     /// <summary>

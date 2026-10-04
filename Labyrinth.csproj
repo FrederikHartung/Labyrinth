@@ -1,148 +1,19 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{261D1EBB-20AA-4581-A20C-24E47D12B92A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
     <RootNamespace>Labyrinth</RootNamespace>
     <AssemblyName>Labyrinth</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <NoWarn>$(NoWarn);WFO1000</NoWarn>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
+    <None Update="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Maze\Block.cs" />
-    <Compile Include="Maze\Canvas.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Forms\Base_Form_Core.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Base_Form_Core.Designer.cs">
-      <DependentUpon>Base_Form_Core.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Form_Performence.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Form_Performence.Designer.cs">
-      <DependentUpon>Form_Performence.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HelperKlassenX\Attribute\Custom_Trennpunkt.cs" />
-    <Compile Include="HelperKlassenX\Attribute\Custom_Einheit.cs" />
-    <Compile Include="HelperKlassenX\Attribute\Custom_Layout.cs" />
-    <Compile Include="Maze\Regel.cs" />
-    <Compile Include="Statics\App_Einstellungen.cs" />
-    <Compile Include="Forms\Base_Form.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Base_Form.Designer.cs">
-      <DependentUpon>Base_Form.cs</DependentUpon>
-    </Compile>
-    <Compile Include="_Baustelle\Editor.cs" />
-    <Compile Include="Forms\Form_Einstellungen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Form_Einstellungen.Designer.cs">
-      <DependentUpon>Form_Einstellungen.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Form_Mainform.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Form_Mainform.Designer.cs">
-      <DependentUpon>Form_Mainform.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Statics\Helper.cs" />
-    <Compile Include="HelperKlassenX\Helper\AssemblyHelper.cs" />
-    <Compile Include="HelperKlassenX\Attribute\Custom_Ignore.cs" />
-    <Compile Include="HelperKlassenX\Helper\ExportImportHelper.cs" />
-    <Compile Include="HelperKlassenX\Helper\ObjectConverter.cs" />
-    <Compile Include="HelperKlassenX\Helper\StringHelper.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Forms\Form_Test.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Form_Test.Designer.cs">
-      <DependentUpon>Form_Test.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="Forms\Form_Einstellungen.resx">
-      <DependentUpon>Form_Einstellungen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form_Mainform.resx">
-      <DependentUpon>Form_Mainform.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form_Performence.resx">
-      <DependentUpon>Form_Performence.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <EmbeddedResource Include="Forms\Form_Test.resx">
-      <DependentUpon>Form_Test.cs</DependentUpon>
-    </EmbeddedResource>
-    <None Include="HelperKlassenX\HelperKlassenX.csproj" />
-    <None Include="packages.config" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="HelperKlassenX\HelperKlassenX.sln" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+
 </Project>
