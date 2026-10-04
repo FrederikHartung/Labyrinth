@@ -8,8 +8,10 @@
     <AssemblyName>Labyrinth</AssemblyName>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>disable</Nullable>
+    <!-- Die originale Properties\AssemblyInfo.cs verwenden statt sie generieren zu lassen -->
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <NoWarn>$(NoWarn);WFO1000</NoWarn>
+    <!-- CA1416: Ohne generierte AssemblyInfo fehlt das SupportedOSPlatform-Attribut; die App ist ohnehin nur für Windows -->
+    <NoWarn>$(NoWarn);WFO1000;CA1416</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
