@@ -1,14 +1,21 @@
 # Labyrinth
 
-Ein Labyrinth-Generator mit automatischer Wegfindung in C# und Windows Forms. Er ist eines meiner ersten Programmierprojekte und entstand im November 2021, in der Anfangszeit meiner Programmierlaufbahn.
+Ein Labyrinth-Generator mit automatischer Wegfindung in C# und Windows Forms. Er ist eines meiner ersten Programmierprojekte und entstand im November 2021, in der Anfangszeit meiner Programmierlaufbahn – als privates Projekt, weil mich interessiert hat, wie man ein Labyrinth automatisch erzeugen und lösen kann.
 
 Wie schon beim Taschenrechner aus meinem Praktikum gilt auch hier: Der Code zeigt, wo ich damals stand – mit allem, was man als Anfänger eben so macht.
 
 ![Generiertes Labyrinth mit eingezeichnetem Lösungsweg](docs/screenshot-labyrinth.png)
 
+## Worauf ich damals stolz war
+
+- **Geschwindigkeit:** Wie schnell das Labyrinth erzeugt und gelöst wird. Die Performance-Ansicht misst die Dauer mit – bei einem Labyrinth mit 26 × 13 Blöcken sind es nur wenige Millisekunden.
+- **Verschiedene Labyrinthe:** Größe und Blockgröße sind frei einstellbar, und über die „Gewichtung des Rahmens“ lässt sich beeinflussen, wie das Labyrinth wächst und damit, wie es aussieht.
+- **Schritt-für-Schritt-Ansicht:** War beim Erzeugen das Performance-Fenster geöffnet, kann man sich im Nachhinein mit einem Schieberegler ansehen, wie das Labyrinth Block für Block entstanden ist und wie anschließend der Weg gesucht wurde.
+
 ## Features
 
 - **Zufällige Labyrinthe** in frei wählbarer Größe, mit Start (grün) oben links und Ziel (rot) unten rechts
+- **Steuerbarer Aufbau:** Die Wände wachsen vom Rahmen aus nach innen. Bei jedem Schritt entscheidet der Zufall zusammen mit der „Gewichtung des Rahmens“, ob die Wand an einem der zuletzt gebauten Blöcke weiterwächst (lange Wandzüge) oder an einem beliebigen bereits vorhandenen Block (mehr Verzweigungen).
 - **Automatische Wegfindung:** Das Programm läuft das Labyrinth mit der „Linke-Hand-Regel“ ab, also immer an der linken Wand entlang. Anschließend werden alle Sackgassen aus dem gelaufenen Weg entfernt, sodass nur der direkte Lösungsweg (hellblau) übrig bleibt.
 - **Einstellungen,** die sich selbst aufbauen: Die Eingabemaske wird per Reflection automatisch aus den Properties der Einstellungsklasse erzeugt, gesteuert über eigene Attribute (`Custom_Layout`, `Custom_Ignore`, `Custom_Einheit`). Gespeichert und geladen werden die Einstellungen über einen ebenso generischen Export und Import.
 - **Performance-Ansicht** mit Größe des Labyrinths, Anzahl der Blöcke und Berechnungsdauer. Über einen Schieberegler lassen sich der Aufbau des Labyrinths und die anschließende Wegsuche Schritt für Schritt nachverfolgen.
@@ -30,6 +37,9 @@ Damit sich das Projekt heute noch bauen und starten lässt, wurde es 2026 auf .N
 - **Eigene Serialisierung:** Für das Speichern der Einstellungen habe ich einen kompletten Export/Import per Reflection in Textdateien geschrieben. Das war lehrreich – heute würde ich einfach `System.Text.Json` verwenden.
 - **Auskommentierter Code:** Alte Lösungsansätze stehen noch als große auskommentierte Blöcke im Code. Dafür ist eigentlich die Versionsverwaltung da.
 - **Wegfindung:** Die Linke-Hand-Regel läuft erst einmal jede Sackgasse ab, die auf ihrem Weg liegt, und braucht deshalb den nachträglichen Aufräumschritt. Eine Breitensuche (BFS) würde den kürzesten Weg direkt finden.
+- **Generierung:** Das Labyrinth wächst vom Rahmen aus nach innen und entsteht damit nicht wirklich „zufällig“ von allen Seiten gleichzeitig. Heute würde ich einen der bekannten Algorithmen verwenden, z. B. Recursive Backtracking, Prim oder Kruskal.
+- **Lösungsweg nachvollziehbar machen:** Angezeigt wird nur der aufbereitete Weg. Spannend wäre, auch den kompletten gelaufenen Weg mit allen Sackgassen anzeigen zu können – wahlweise mit oder ohne Aufbereitung.
+- **Viele einzelne Fenster:** Der Hinweis auf eine fehlende Einstellungsdatei, die Einstellungen und die Performance-Ansicht öffnen jeweils ein eigenes Fenster. Heute würde ich das in der Hauptansicht lösen, z. B. mit einem Overlay, einem modalen Dialog oder einem Dropdown.
 - **Starres Layout:** Die Buttons teilen sich die Fensterbreite. Bei kleinen Fenstern werden die Beschriftungen abgeschnitten.
 - **Keine Tests:** Gerade Generierung und Wegfindung wären ideal für Unit-Tests gewesen.
 
